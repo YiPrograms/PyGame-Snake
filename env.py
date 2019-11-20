@@ -1,0 +1,16 @@
+
+FPS = 60
+
+WIDTH = 20
+HEIGHT = 20
+BLOCK_SIZE = 30
+
+COLOR_GIRD = (39, 189, 235)
+COLOR_BACK = (69, 90,87)
+
+COLOR_SNAKE = (255, 255, 255)
+
+GIRD_WIDTH = 3
+
+
+DIR = [(-1, 0), (1, 0), (0, -1), (0, 1)]
