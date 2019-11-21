@@ -1,16 +1,19 @@
 
 FPS = 60
 
-WIDTH = 20
-HEIGHT = 20
+WIDTH = 25
+HEIGHT = 25
 BLOCK_SIZE = 30
 
 COLOR_GIRD = (39, 189, 235)
 COLOR_BACK = (69, 90,87)
 
 COLOR_SNAKE = (255, 255, 255)
+COLOR_FOOD = (255, 99, 71)
 
-GIRD_WIDTH = 3
+GIRD_WIDTH = 1
 
 
-DIR = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+DIR = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+
+RUN_TICK = 180

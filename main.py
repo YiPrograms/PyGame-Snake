@@ -13,27 +13,37 @@ def main():
     clock = pygame.time.Clock()
     game = Game(screen)
 
+    RUN_EVENT = pygame.USEREVENT+1
+    pygame.time.set_timer(RUN_EVENT, RUN_TICK)
+
     running = True
     while running:
         clock.tick(FPS)
 
-        game.draw_gird()
+        game.draw_back()
         game.update()
-        pygame.display.flip()
+        
 
         for e in pygame.event.get():
             if e.type == pygame.QUIT:
                 quit()
-            
-            if e.type == pygame.KEYDOWN:
+            elif e.type == pygame.KEYDOWN:
                 if e.key == pygame.K_UP:
-                    game.snake.dir = 0
+                    game.snake.set_dir(0)
+                elif e.key == pygame.K_RIGHT:
+                    game.snake.set_dir(1)
                 elif e.key == pygame.K_DOWN:
-                    game.snake.dir = 1
-                elif e.key == pygame.K_DOWN:
-                    game.snake.dir = 2
-                elif e.key == pygame.K_DOWN:
-                    game.snake.dir = 3
+                    game.snake.set_dir(2)
+                elif e.key == pygame.K_LEFT:
+                    game.snake.set_dir(3)
+                elif e.key == pygame.K_SPACE:
+                    game.snake.extend = True
+            elif e.type == RUN_EVENT:
+                game.snake.forward()
+            
+        game.draw_gird()
+        pygame.display.flip()
+
 
 
 
